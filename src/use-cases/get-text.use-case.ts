@@ -4,13 +4,13 @@ export interface Response {
     videos: Video[];
 }
 
-const backed = process.env.NEXT_PUBLIC_GET_TEXT_BACKEND;
+const backend = process.env.NEXT_PUBLIC_GET_TEXT_BACKEND;
 
 export async function getText(url:string): Promise<Video[]>{
 
     try {
         
-        const resp =  await fetch(`${backed}/generate/get-text/`,{
+        const resp =  await fetch(`${backend}/api/generate/get-text/`,{
             method: 'POST',
             body: JSON.stringify({url}),
             headers: {
