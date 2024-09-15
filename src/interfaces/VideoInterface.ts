@@ -4,6 +4,7 @@ export interface Video {
   upload_date: string;
   txt_file:    TxtFile;
   text:        string;
+  url:         string;
 }
 
 export interface TxtFile {
