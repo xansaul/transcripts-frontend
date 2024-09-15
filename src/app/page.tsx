@@ -1,9 +1,6 @@
 "use client";
-import { CardVideoInfo } from "@/components/cards/CardVideoInfo";
-import { SkeletonCard } from "@/components/cards/SkeletonCard";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+
+import { Button, Card, CardContent, CardHeader, Input, SkeletonCard, VideosGrid } from "@/components";
 import { Video } from "@/interfaces/VideoInterface";
 import { getText } from "@/use-cases/get-text.use-case";
 import { ReloadIcon } from "@radix-ui/react-icons";
@@ -55,11 +52,7 @@ export default function Home() {
             <SkeletonCard />
           )
         }
-        {
-          videosData.map(video => (
-            <CardVideoInfo key={video.audio_id} {...video} />
-          ))
-        }
+        <VideosGrid videos={videosData} />
       </div>
     </div>
   );
