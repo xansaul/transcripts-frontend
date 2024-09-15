@@ -1,9 +1,8 @@
-import { VideosGrid } from "@/components";
-import { getVideos } from "@/use-cases/get-videos.use-case";
-
 export const revalidate = 0;
 export const dynamic = 'force-dynamic';
 
+import { VideosGrid } from "@/components";
+import { getVideos } from "@/use-cases/get-videos.use-case";
 
 export default async function VideosPage() {
   const videos = await getVideos();
