@@ -15,11 +15,11 @@ export const VideoActionsButtons = ({ video }: Props) => {
     return (
 
         <div className="flex gap-2">
-            <Button variant="secondary" size="icon">
-                <Clipboard className="h-4 w-4" color="white" onClick={() => copyTextVideo(video)} />
+            <Button variant="secondary" size="icon" onClick={() => copyTextVideo(video)}>
+                <Clipboard className="h-4 w-4" color="white" />
             </Button>
-            <Button variant="default" size="icon">
-                <DownloadIcon className="h-4 w-4" color="white" onClick={() => handleDownload(video)} />
+            <Button variant="default" size="icon" onClick={() => handleDownload(video)} >
+                <DownloadIcon className="h-4 w-4" color="white" />
             </Button>
             <Button variant="destructive" size="icon" disabled={isLoading} onClick={() => handleDelete(video.id)}>
                 <Trash className="h-4 w-4" />
