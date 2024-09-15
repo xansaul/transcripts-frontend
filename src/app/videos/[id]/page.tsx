@@ -9,20 +9,27 @@ interface Props {
 }
 
 export default async function VideoDetailPage({ params }: Props) {
-  
-  if(isNaN(+params.id)) {
+
+  if (isNaN(+params.id)) {
     redirect("/");
   }
   const id = +params.id;
   const video = await getVideoById(id);
-  
-  if(!video) {
+
+  if (!video) {
     redirect("/");
   }
 
   return (
     <div className="py-3 w-8/12 m-auto">
-      <div className="flex justify-end my-5">
+      <div className="flex justify-between my-5">
+        <a
+          target="_blank"
+          href={video.url} 
+          className="font-semibold underline text-muted-foreground hover:text-foreground"
+        >
+            Ir al video...
+        </a>
         <VideoActionsButtons video={video} />
       </div>
       <h1 className="font-bold text-3xl mb-3">{video.title}</h1>
