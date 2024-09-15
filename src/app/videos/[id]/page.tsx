@@ -1,6 +1,6 @@
 import { VideoActionsButtons } from "@/components";
 import { getVideoById } from "@/use-cases/get-video-by-id.use-case";
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
 interface Props {
   params: {

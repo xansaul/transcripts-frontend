@@ -1,7 +1,9 @@
+
 import { Video } from "@/interfaces/VideoInterface";
 import { deleteVideo } from "@/use-cases/delete-video.use-case";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const backend = process.env.NEXT_PUBLIC_GET_TEXT_BACKEND;
 
@@ -43,6 +45,7 @@ export const useVideo = () => {
   const copyTextVideo = async (video: Video) => {
     try {
       await navigator.clipboard.writeText(video.text);
+      toast.success("Texto copiado con exito.", {  });
     } catch (error) {
       console.log(error);
     }
