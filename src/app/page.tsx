@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Card, CardContent, CardHeader, Input, SkeletonCard, VideosGrid } from "@/components";
+import { Button, Card, CardContent, CardHeader, Input, VideosGrid, VideosGridSkeleton } from "@/components";
 import { Video } from "@/interfaces/VideoInterface";
 import { getText } from "@/use-cases/get-text.use-case";
 import { ReloadIcon } from "@radix-ui/react-icons";
@@ -46,10 +46,10 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <div className="w-7/12 mt-5">
+      <div className="w-11/12 mt-5">
         {
           isLoading && (
-            <SkeletonCard />
+            <VideosGridSkeleton />
           )
         }
         <VideosGrid videos={videosData} />
