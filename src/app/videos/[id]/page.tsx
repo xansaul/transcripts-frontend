@@ -1,3 +1,5 @@
+export const revalidate = 0;
+
 import { VideoActionsButtons } from "@/components";
 import { getVideoById } from "@/use-cases/get-video-by-id.use-case";
 import { redirect } from "next/navigation";

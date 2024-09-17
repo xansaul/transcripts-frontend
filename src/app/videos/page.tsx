@@ -1,5 +1,5 @@
-export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+
 import { VideosGrid } from "@/components";
 import { getVideos } from "@/use-cases/get-videos.use-case";
 
